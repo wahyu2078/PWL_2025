@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; //Menggunakan Route untuk mendefinisikan rute aplikasi.
+use App\Http\Controllers\ItemController; //Menggunakan ItemController untuk mengelola item.
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () { //Menggunakan Route::get untuk mendefinisikan rute get.
+    return view('welcome'); //Mengembalikan view welcome.
 });
+
+Route::resource('items', ItemController::class); //Menggunakan Route::resource untuk mendefinisikan rute resource.
